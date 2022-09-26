@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import { Avatar, Button } from "@mui/material";
-import db  from "./firebase";
-import {serverTimestamp} from "firebase/firestore";
+import db from "./firebase";
+import { serverTimestamp } from "firebase/firestore";
 
 export default function TweetBox() {
-
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
@@ -17,14 +16,14 @@ export default function TweetBox() {
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar: "https://i.postimg.cc/rFHKkNhm/aldi-sigun-unt3066-GV-E-unsplash.jpg",
+      avatar:
+        "https://i.postimg.cc/rFHKkNhm/aldi-sigun-unt3066-GV-E-unsplash.jpg",
       timestamp: serverTimestamp(),
     });
 
     setTweetMessage("");
     setTweetImage("");
   };
-
 
   return (
     <div className="tweetBox">
@@ -57,4 +56,3 @@ export default function TweetBox() {
     </div>
   );
 }
-

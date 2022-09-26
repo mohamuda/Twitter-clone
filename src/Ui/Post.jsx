@@ -1,11 +1,10 @@
-import React, {forwardRef} from "react";
+import React, { forwardRef } from "react";
 import { Avatar } from "@mui/material";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
-
 
 const Post = forwardRef(
   ({ displayName, username, verified, text, image, avatar }, ref) => {
@@ -31,10 +30,13 @@ const Post = forwardRef(
           </div>
           <img src={image} alt="" />
           <div className="post__footer">
-            <ChatBubbleOutlineIcon fontSize="small" style={{color: "#657786"}}/>
-            <RepeatIcon fontSize="small" style={{color: "#657786"}}/>
-            <FavoriteBorderIcon fontSize="small" style={{color: "#657786"}}/>
-            <PublishIcon fontSize="small" style={{color: "#657786"}}/>
+            <ChatBubbleOutlineIcon
+              fontSize="small"
+              style={{ color: "#657786" }}
+            />
+            <RepeatIcon fontSize="small" style={{ color: "#657786" }} />
+            <FavoriteBorderIcon fontSize="small" style={{ color: "#657786" }} />
+            <PublishIcon fontSize="small" style={{ color: "#657786" }} />
           </div>
         </div>
       </div>
@@ -43,5 +45,3 @@ const Post = forwardRef(
 );
 
 export default Post;
-
-

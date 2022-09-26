@@ -1,37 +1,38 @@
-import React, {useState} from 'react';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import React, { useState } from "react";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { Avatar, Button } from "@mui/material";
-import db from '../Ui/firebase';
+import db from "../Ui/firebase";
 
 export default function Tweetmodal() {
+  const [tweetMessage, setTweetMessage] = useState("");
+  const [tweetImage, setTweetImage] = useState("");
 
-    const [tweetMessage, setTweetMessage] = useState("");
-    const [tweetImage, setTweetImage] = useState("");
-  
-    const sendTweet = (e) => {
-      e.preventDefault();
-  
-      db.collection("posts").add({
-        displayName: "Abdullahi Mohamud",
-        username: "Mohamuda",
-        verified: true,
-        text: tweetMessage,
-        image: tweetImage,
-        avatar:
-          "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-      });
-  
-      setTweetMessage("");
-      setTweetImage("");
-    };
+  const sendTweet = (e) => {
+    e.preventDefault();
+
+    db.collection("posts").add({
+      displayName: "Abdullahi Mohamud",
+      username: "Mohamuda",
+      verified: true,
+      text: tweetMessage,
+      image: tweetImage,
+      avatar:
+        "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
+    });
+
+    setTweetMessage("");
+    setTweetImage("");
+  };
 
   return (
-
-    <div className='Tweetmodal'>
-        <div className="Tweetmodal--container">
-            <button className='Tweetmodal--button'> <CloseOutlinedIcon  /></button>
-        </div>
-        <form>
+    <div className="Tweetmodal">
+      <div className="Tweetmodal--container">
+        <button className="Tweetmodal--button">
+          {" "}
+          <CloseOutlinedIcon />
+        </button>
+      </div>
+      <form>
         <div className="Tweetmodal__input">
           <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
           <input
@@ -58,7 +59,5 @@ export default function Tweetmodal() {
         </Button>
       </form>
     </div>
-
-  )
-
+  );
 }
